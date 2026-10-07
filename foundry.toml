@@ -15,3 +15,6 @@ remappings = [
 
 [invariant]
 fail_on_revert = true
+
+[rpc_endpoints]
+mainnet = "${MAINNET_RPC_URL}"
