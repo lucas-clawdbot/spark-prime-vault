@@ -17,6 +17,11 @@ contract SavingsVault is ERC4626 {
         IERC20(asset()).transfer(msg.sender, assets);
     }
 
+    function repay(uint256 assets) external {
+        lent -= assets;
+        IERC20(asset()).transferFrom(msg.sender, address(this), assets);
+    }
+
     function totalAssets() public view override returns (uint256) {
         return super.totalAssets() + lent;
     }
